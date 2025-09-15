@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Manager</title>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Employee Manager</div>
+      <div class="nav-links">
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/register">Register</a>
+        <a routerLink="/page4">Employees</a>
+        <a class="logout-button" routerLink="/login">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <form (ngSubmit)="onSubmit()" #employeeForm="ngForm" novalidate>
+      <div class="employee-container">
+        <h2 class="header">Employee Register</h2>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" [(ngModel)]="employeeObj.name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input type="text" id="department" name="department" [(ngModel)]="employeeObj.department" required />
+        </div>
+
+        <div class="form-group">
+          <label for="position">Position</label>
+          <input type="text" id="position" name="position" [(ngModel)]="employeeObj.position" required />
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number" id="salary" name="salary" [(ngModel)]="employeeObj.salary" required />
+        </div>
+
+        <div class="button-group">
+          <button class="update-button" type="submit">
+            {{ employeeObj.id ? 'Update' : 'Add' }} Employee
+          </button>
+
+          <button class="get-button" type="button" routerLink="/page4">
+            Get Employees
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <!-- Optional footer content -->
+  </footer>
+
+</body>
+</html>
+
+
+<!-- <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+  <div class="employee-container">
+    <h2 class="header">Employee Register</h2>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" [(ngModel)]="employeeObj.name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input type="text" id="department" name="department" [(ngModel)]="employeeObj.department" required />
+    </div>
+
+    <div class="form-group">
+      <label for="position">Position</label>
+      <input type="text" id="position" name="position" [(ngModel)]="employeeObj.position" required />
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input type="number" id="salary" name="salary" [(ngModel)]="employeeObj.salary" required />
+    </div>
+
+    <div class="button-group">
+
+      <button class="update-button" type="submit">
+        {{ employeeObj.id ? 'Update' : 'Add' }} Employee</button>
+
+       Get Employees Button -->
+      <!-- <button class="get-button" type="button" 
+        (click)="employeeObj.id ? cancel() : getAllEmployees()">
+  {{ employeeObj.id ? 'Cancel' : 'Get Employees' }}
+</button> -->
+
+<!-- <button class="get-button" type="button"  routerLink="/page4">Get Employees</button> 
+
+    </div>
+  </div>
+</form> --> 
+
+
+
+
+<!-- Display Employee List -->
+<!-- <div *ngIf="employees.length > 0" class="employee-list">
+  <h3 class="list-header">Employee List</h3>
+  <table class="employee-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Salary (₹)</th>
+        <th>Actions</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees; let i = index">
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.position }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>
+          <button (click)="editEmployee(emp)">Update</button>
+          <button (click)="deleteEmployee(emp.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>  -->

@@ -1,0 +1,233 @@
+/* ===== RESET ===== */
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #2c3e50;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #34495e;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* ===== FORM CONTAINER ===== */
+.employee-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #bdc3c7;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #2c3e50;
+}
+
+/* ===== BUTTON GROUP ===== */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.update-button,
+.get-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.update-button {
+  background-color: #27ae60;
+}
+
+.update-button:hover {
+  background-color: #1e8449;
+}
+
+.get-button {
+  background-color: #2980b9;
+}
+
+.get-button:hover {
+  background-color: #21618c;
+}
+
+/* ===== EMPLOYEE LIST ===== */
+.employee-list {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.list-header {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #bdc3c7;
+  padding: 10px;
+  text-align: center;
+}
+
+.employee-table th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.employee-table button {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Update Button */
+.employee-table button:first-child {
+  background-color: #27ae60;
+  color: white;
+}
+
+.employee-table button:first-child:hover {
+  background-color: #1e8449;
+}
+
+/* Delete Button */
+.employee-table button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.employee-table button:last-child:hover {
+  background-color: #c0392b;
+}
+
+
+.download-btn {
+  padding: 10px 20px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #3266f5;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0545f3;
+}
+
+.pdf {
+margin-top: 10px;
+}
+

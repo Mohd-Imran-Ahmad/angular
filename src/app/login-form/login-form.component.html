@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">My Company</div>
+  <div class="nav-links">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/contact">Contact</a>
+    <a routerLink="/signup" class="signup-link">Sign Up</a>
+  </div>
+</nav>
+
+  </header>
+
+  <main>
+ <form (ngSubmit)="onLogin()" >
+  <div class="login-container">
+    <h2>Web Site Log In</h2>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" [(ngModel)]="leadObj.username" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="leadObj.password" required/>
+    </div>
+
+    <div class="button-group">
+      <button class="login-btn" type="submit">Login</button>
+       <!-- <a href="/page1">Sign Up</a>  both work <a> </a> this tag reload and routerLink single page refresh  -->
+     <button class="get-button" type="button" routerLink="/page1">Sign Up</button> 
+      <!-- import login-form.component.ts RouterModule -->
+    </div>
+  </div>
+</form>  
+  </main>
+
+  <footer>
+    
+  </footer>
+</body>
+</html>

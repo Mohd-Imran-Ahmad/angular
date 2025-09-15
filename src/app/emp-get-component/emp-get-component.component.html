@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+ <nav class="navbar">
+  <div class="logo">Employee Dashboard</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Tasks</a>
+    <a href="#">Reports</a>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+  </header>
+
+  <main>
+<!-- Display Employee List -->
+<div *ngIf="employees.length > 0" class="employee-list">
+  <h3 class="list-header">Employee List</h3>
+  <table class="employee-table">
+    <thead>
+      <tr>
+        <th>Sr No.</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Salary (₹)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let emp of employees; let i = index">
+        
+        <!-- If this row is in edit mode -->
+        <ng-container *ngIf="editingIndex === i; else viewMode">
+          <td><input [(ngModel)]="emp.id" /></td>
+          <td><input [(ngModel)]="emp.name" /></td>
+          <td><input [(ngModel)]="emp.department" /></td>
+          <td><input [(ngModel)]="emp.position" /></td>
+          <td><input type="number" [(ngModel)]="emp.salary" /></td>
+          <td>
+            <button (click)="saveEmployee(emp)">Save</button>
+            <button (click)="cancelEdit()">Cancel</button>
+          </td>
+        </ng-container>
+
+        <!-- Normal row (View Mode) -->
+        <ng-template #viewMode>
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.position }}</td>
+          <td>{{ emp.salary }}</td>
+          <td>
+            <button (click)="editEmployee(i)">Update</button>
+            <button (click)="deleteEmployee(emp.id)">Delete</button>
+          </td>
+      
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+  <table class="pdf">
+    <tbody>
+<tr>
+  <th>This employees list download in Excel formate click this download button</th> 
+  <td><button class="download-btn" (click)="getExcelList()">Download</button></td>
+</tr>
+</tbody>
+  </table>
+</div>
+  </main>
+
+  <footer>
+    
+  </footer>
+</body>
+</html> 
